@@ -1,1 +1,43 @@
-/* You can add global styles to this file, and also import other style files */
+/* PrimeNG theme & core */
+@import "primeflex/primeflex.css";
+@import "primeicons/primeicons.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --brand: #468EF7;
+  --brand-contrast: #ffffff;
+  --brand-hover: color-mix(in oklab, var(--brand) 92%, black 8%);
+  --brand-active: color-mix(in oklab, var(--brand) 86%, black 14%);
+  --brand-ring: color-mix(in oklab, var(--brand) 50%, white 50%);
+}
+
+.p-button {
+  background-color: var(--brand) !important;
+  border-color: var(--brand) !important;
+  color: var(--brand-contrast) !important;
+}
+.p-button:enabled:hover {
+  background-color: var(--brand-hover) !important;
+  border-color: var(--brand-hover) !important;
+}
+.p-button:enabled:active {
+  background-color: var(--brand-active) !important;
+  border-color: var(--brand-active) !important;
+}
+.p-button:focus-visible {
+  outline: 0;
+  box-shadow: 0 0 0 3px var(--brand-ring) !important;
+}
+.p-button.p-button-outlined {
+  background-color: transparent !important;
+  color: var(--brand) !important;
+  border-color: var(--brand) !important;
+}
+.p-button.p-button-text {
+  background-color: transparent !important;
+  color: var(--brand) !important;
+  border-color: transparent !important;
+}

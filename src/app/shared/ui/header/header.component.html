@@ -1,0 +1,16 @@
+<div class="card">
+  <p-menubar [model]="items">
+    <ng-template #start>
+      <a routerLink="/" class="flex items-center gap-3 px-2">
+        <img ngSrc="img/din_trykker_logo_xl.png" width="100" height="100" alt="Din‑Trykker logo" />
+      </a>
+    </ng-template>
+
+    <ng-template pTemplate="end">
+      <div class="flex flex-col items-end pr-4 text-right text-sm leading-tight">
+        <div class="font-semibold text-lg text-gray-900">📞 +45 52 52 06 22</div>
+        <div class="text-gray-600">Åbent: Man–Fre 09:00–17:00</div>
+      </div>
+    </ng-template>
+  </p-menubar>
+</div>

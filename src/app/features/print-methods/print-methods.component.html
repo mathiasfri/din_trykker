@@ -1,0 +1,167 @@
+<!-- Hero -->
+<section class="bg-gradient-to-b from-slate-50 to-white border-b">
+  <div class="max-w-6xl mx-auto px-4 py-14">
+    <div class="flex flex-col items-center justify-center gap-6 text-center">
+      <div class="max-w-2xl">
+        <h1 class="text-4xl font-extrabold tracking-tight">Trykmetoder</h1>
+        <p class="mt-3 text-slate-600">
+          Her finder du en enkel gennemgang af <strong>DTF (Direct-to-Film)</strong> – vores
+          fleksible allround-løsning til farvemættede motiver, små serier og høj detaljegrad. Vi
+          rådgiver også om broderi, transfer og skærmtryk.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="max-w-6xl mx-auto px-4 py-12">
+  <div class="flex justify-center">
+    <p-card class="shadow-sm w-full max-w-2xl">
+      <ng-template pTemplate="title">Hvad er DTF (Direct-to-Film)?</ng-template>
+      <ng-template pTemplate="content">
+        <p class="text-slate-700">
+          DTF er en moderne <em>varmeoverførsel</em> hvor motivet printes på en
+          <strong>PET-film</strong> med specialblæk, som overføres til tekstil ved <strong>varme og tryk</strong>.
+          Resultatet er et slidstærkt tryk med <strong>fuld farve</strong> (også fotos/gradienter) og
+          <strong>meget fine detaljer</strong>. Teknikken fungerer på bomuld, polyester og
+          blandinger – ideel til t-shirts, hoodies, arbejdstøj m.m.
+        </p>
+      </ng-template>
+    </p-card>
+  </div>
+</section>
+
+<!-- Timeline -->
+<section class="max-w-6xl mx-auto px-4">
+  <p-card class="shadow-sm">
+    <ng-template pTemplate="title"> DTF – trin for trin </ng-template>
+    <ng-template pTemplate="content">
+      <p-timeline [value]="steps" align="alternate" class="w-full">
+        <ng-template pTemplate="opposite" let-step>
+          <span class="text-slate-400">{{ step.status }}</span>
+        </ng-template>
+        <ng-template pTemplate="content" let-step>
+          <div class="p-3 rounded-lg border bg-white">
+            <p class="m-0 text-slate-700">{{ step.detail }}</p>
+          </div>
+        </ng-template>
+      </p-timeline>
+    </ng-template>
+  </p-card>
+</section>
+
+<!-- Fordele / Ulemper -->
+<section class="max-w-6xl mx-auto px-4 py-12">
+  <div class="grid md:grid-cols-2 gap-8">
+    <p-card header="Fordele" class="shadow-sm">
+      <ul class="list-disc pl-5 space-y-2 text-slate-700">
+        @for (p of pros; track $index) {
+          <li>{{ p }}</li>
+        }
+      </ul>
+    </p-card>
+    <p-card header="Vær opmærksom på" class="shadow-sm">
+      <ul class="list-disc pl-5 space-y-2 text-slate-700">
+        @for (c of cons; track $index) {
+          <li>{{ c }}</li>
+        }
+      </ul>
+    </p-card>
+  </div>
+</section>
+
+<!-- Filkrav / Vaskeanvisning -->
+<section class="max-w-6xl mx-auto px-4">
+  <div class="grid md:grid-cols-2 gap-8">
+    <p-card header="Filkrav" class="shadow-sm">
+      <ul class="list-disc pl-5 space-y-2 text-slate-700">
+        @for (t of fileTips; track $index) {
+          <li>{{ t }}</li>
+        }
+      </ul>
+      <p-divider></p-divider>
+      <p class="text-sm text-slate-500">
+        Tip: Til små logoer (brysttryk 7–10 cm) er rene vektorformer og gode kontraster bedst.
+      </p>
+    </p-card>
+
+    <p-card header="Vaskeanvisning" class="shadow-sm">
+      <ul class="list-disc pl-5 space-y-2 text-slate-700">
+        @for (c of care; track $index) {
+          <li>{{ c }}</li>
+        }
+      </ul>
+      <p-divider></p-divider>
+      <div class="flex items-center gap-2 text-sm text-slate-600">
+        <i class="pi pi-info-circle"></i>
+        Holdbarheden afhænger også af tekstiltype, brug og behandling i hverdagen.
+      </div>
+    </p-card>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="max-w-6xl mx-auto px-4 py-12">
+  <p-card class="shadow-sm">
+    <ng-template pTemplate="title"> FAQ – ofte stillede spørgsmål </ng-template>
+    <ng-template pTemplate="content">
+      <p-accordion value="0">
+        <p-accordion-panel value="0">
+          <p-accordion-header>Hvornår vælger man DTF frem for broderi?</p-accordion-header>
+          <p-accordion-content>
+            Vælg DTF når du ønsker <strong>fuld farve</strong>, små serier, meget fine detaljer
+            eller fototryk. Vælg broderi til et <em>eksklusivt</em> udtryk, hvor struktur/relief er
+            vigtigst (fx på caps og kraftige polos).
+          </p-accordion-content>
+        </p-accordion-panel>
+
+        <p-accordion-panel value="1">
+          <p-accordion-header>Er der minimumsantal?</p-accordion-header>
+          <p-accordion-content>
+            DTF har lav opstart og kan laves helt ned til få stk. Stykpris falder ved større antal
+            og/eller hvis samme motiv bruges på flere produkter.
+          </p-accordion-content>
+        </p-accordion-panel>
+
+        <p-accordion-panel value="2">
+          <p-accordion-header>Hvordan med farver og Pantone?</p-accordion-header>
+          <p-accordion-content>
+            Vi kan matche farver meget tæt. Til kritiske brandfarver anbefaler vi en fysisk prøve
+            eller farveproof.
+          </p-accordion-content>
+        </p-accordion-panel>
+
+        <p-accordion-panel value="3">
+          <p-accordion-header>Holder DTF på arbejdstøj?</p-accordion-header>
+          <p-accordion-content>
+            Ja – DTF binder godt på workwear (polyester/blends). Til ekstrem hårdt slid kan vi
+            anbefale ekstra efterpres eller alternative teknikker afhængigt af produktet.
+          </p-accordion-content>
+        </p-accordion-panel>
+      </p-accordion>
+    </ng-template>
+  </p-card>
+</section>
+
+<!-- CTA -->
+<section class="max-w-6xl mx-auto px-4 py-12">
+  <div
+    class="rounded-2xl border p-6 md:p-8 bg-slate-50 flex flex-col md:flex-row items-start md:items-center justify-between gap-6"
+  >
+    <div>
+      <h3 class="text-2xl font-bold">Klar til et tilbud eller en prøve?</h3>
+      <p class="text-slate-600 mt-1">
+        Send dit logo og ønsket placering/størrelse – så rådgiver vi om bedste løsning og pris.
+      </p>
+    </div>
+    <div class="flex items-center gap-3">
+      <a
+        routerLink="/kontakt"
+        pButton
+        label="Kontakt os"
+        icon="pi pi-envelope"
+        class="p-button-lg"
+      ></a>
+    </div>
+  </div>
+</section>
