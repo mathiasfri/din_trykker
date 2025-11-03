@@ -1,0 +1,56 @@
+name: Deploy Angular to GitHub Pages
+
+on:
+  push:
+    branches: [ main ]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install deps
+        run: npm ci
+
+      - name: Build with base href
+        run: npx ng build --base-href "/din_trykker/"
+
+      # SPA fallback so deep links (e.g. /kontakt) work on refresh
+      - name: Create 404.html from index.html
+        run: |
+          DIST_DIR=$(ls -d dist/*/browser 2>/dev/null || ls -d dist/* 2>/dev/null || echo dist)
+          cp "$DIST_DIR/index.html" "$DIST_DIR/404.html"
+          echo "DIST_DIR=$DIST_DIR" >> $GITHUB_ENV
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ${{ env.DIST_DIR }}
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

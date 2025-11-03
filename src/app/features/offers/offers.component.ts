@@ -27,7 +27,7 @@ export class OffersComponent {
     {
       title: 'Profilbeklædning',
       desc: 'T-shirts, poloer og hoodies i skarpe farver og bløde kvaliteter.',
-      img: '/img/offers/profilbeklaedning.png'
+      img: '/img/offers/polo.png'
     },
     {
       title: 'Merchandise',
