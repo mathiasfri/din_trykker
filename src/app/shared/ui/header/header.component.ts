@@ -26,16 +26,20 @@ export class HeaderComponent implements OnInit {
           {
             label: 'DTF (Direct-to-Film)',
             routerLink: '/trykmetoder/dtf',
-          }
+          },
         ],
       },
       {
         label: 'Hvad tilbyder vi',
-        routerLink: '/tilbud'
+        routerLink: '/tilbud',
       },
       {
         label: 'Kontakt',
         routerLink: '/kontakt',
+      },
+      {
+        label: 'Design dit eget tøj',
+        routerLink: '/3d',
       },
     ];
   }

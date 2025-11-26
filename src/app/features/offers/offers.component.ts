@@ -22,27 +22,27 @@ export class OffersComponent {
     {
       title: 'Firmatøj',
       desc: 'Slidstærkt arbejdstøj med logo – hi-vis, softshell, jakker, bukser m.m.',
-      img: '/img/offers/arbejdstoj.png'
+      img: 'img/offers/arbejdstoj.png'
     },
     {
       title: 'Profilbeklædning',
       desc: 'T-shirts, poloer og hoodies i skarpe farver og bløde kvaliteter.',
-      img: '/img/offers/polo.png'
+      img: 'img/offers/polo.png'
     },
     {
       title: 'Merchandise',
       desc: 'Kasketter, tasker og smågaver – perfekt til events og kunder.',
-      img: '/img/offers/kasket.png'
+      img: 'img/offers/kasket.png'
     },
     {
       title: 'Sportstøj',
       desc: 'Åndbare trøjer og sæt med navn/nummer – hold, events og klubber.',
-      img: '/img/offers/sportstoj.png'
+      img: 'img/offers/sportstoj.png'
     },
     {
       title: 'Skole / Efterskole',
       desc: 'Årgangshoodies og klasse-merch – fællesskab med jeres logo.',
-      img: '/img/offers/t-shirt.png'
+      img: 'img/offers/t-shirt.png'
     },
   ];
 }
